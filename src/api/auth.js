@@ -9,7 +9,6 @@ const users = db.get('users');
 const router = express.Router();
 
 router.post('/login', async(req, res, next) => {
-    console.log(req.body.user)
     try {
         // Check if user/pass is correct
         const user = await users.findOne({user: req.body.user, password: req.body.password})
